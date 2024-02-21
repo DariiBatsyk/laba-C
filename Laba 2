@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int age;
+    char name[20];
+    char group[10];
+    printf ("Enter your age: ""\n");
+    scanf ("%d", &age );
+
+    printf ("Enter your name: ");
+    scanf ("%s", &name );
+
+    printf ("Enter your group: ");
+    scanf ("%s", &group );
+
+    printf("your age is: %d\n", age);
+    printf("your name is: %s\n", name);
+    printf("your group is: %s\n", group);
+    printf("laba 2");
+    return 0;
+}
