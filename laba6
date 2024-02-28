@@ -1,0 +1,20 @@
+#include <stdio.h>
+void vartist_dzvinka();
+int main() {
+    vartist_dzvinka();
+    return 0;
+}
+
+    void vartist_dzvinka() {
+        float chas;
+        float vartist;
+        printf(" enter chas: ");
+        scanf("%f", &chas);
+        if (chas >= 0 && chas < 10) {
+            vartist = chas * 1.2;
+            printf("vartist dzinka:%f UAN\n", vartist);
+        } else if (chas > 10) {
+            vartist = chas * 1;
+            printf("vartist dzinka:%f UAN\n", vartist);
+        } else printf("vvedeno ne pravylni dani");
+}
