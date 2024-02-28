@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main(){
+    int P;
+    int Sum;
+
+    printf("Enter P square: ");
+    scanf("%d", &P);
+
+    Sum = P/4;
+
+    printf("side sguare: ""%d\n", Sum);
+    printf("Darri Batsyk knms-11");
+
+    return 0;
+
+}
