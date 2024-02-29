@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+    char firstname[100];
+    char lastname[100];
+    char patronymic[100];
+    printf("enter your firstname, lastname, patronymic: ");
+    scanf("%s", &firstname);
+    printf("%s\n",firstname);
+    scanf("%s", &lastname);
+    printf("%s\n",lastname);
+    scanf("%s", &patronymic);
+    printf("%s\n", patronymic);
+
+
+    return  0;
+}
