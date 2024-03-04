@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+struct Videocamera {
+    char model[50];
+    char camera_type[20];
+    float price;
+    char digital_zoom_available[4];
+    float digital_zoom_factor;
+    float optical_zoom_factor;
+};
+
+int main() {
+    struct Videocamera cameras[] = {
+            {"Model1", "Digital", 500.0, "Yes", 2.0, 3.0},
+            {"Model2", "Analog", 300.0, "No", 0.0, 5.0},
+            {"Model3", "Digital", 800.0, "Yes", 4.0, 2.0},
+    };
+    int num_cameras = sizeof(cameras) / sizeof(cameras[0]);
+    
+    printf("List of Videocameras:\n");
+    for (int i = 0; i < num_cameras; ++i) {
+        printf("Model: %s\n, Type: %s\n, Price: $%.2f\n, Digital Zoom Available: %s\n, Digital Zoom Factor: %.2f\n, Optical Zoom Factor: %.2f\n",
+               cameras[i].model, cameras[i].camera_type, cameras[i].price, cameras[i].digital_zoom_available,
+               cameras[i].digital_zoom_factor, cameras[i].optical_zoom_factor);
+    }
+
+    return 0;
+}
