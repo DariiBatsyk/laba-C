@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+// Struktura dlya zberigannya simptomiv
+typedef struct {
+    bool fever;
+    bool cough;
+    bool shortnessOfBreath;
+    bool fatigue;
+    bool lossOfTasteOrSmell;
+} Symptoms;
+
+// Funktsiya dlya initsializatsiyi simptomiv
+Symptoms initializeSymptoms() {
+    Symptoms symptoms;
+    symptoms.fever = false;
+    symptoms.cough = false;
+    symptoms.shortnessOfBreath = false;
+    symptoms.fatigue = false;
+    symptoms.lossOfTasteOrSmell = false;
+    return symptoms;
+}
+
+// Funktsiya dlya vvodu simptomiv koristuvachem
+void inputSymptoms(Symptoms* symptoms) {
+    char input;
+
+    printf("Chi ye u vas temperatura? (y/n): ");
+    scanf(" %c", &input);
+    symptoms->fever = (input == 'y');
+
+    printf("Chi ye u vas kashel? (y/n): ");
+    scanf(" %c", &input);
+    symptoms->cough = (input == 'y');
+
+    printf("Chi ye u vas zadishka? (y/n): ");
+    scanf(" %c", &input);
+    symptoms->shortnessOfBreath = (input == 'y');
+
+    printf("Chi ye u vas vtoma? (y/n): ");
+    scanf(" %c", &input);
+    symptoms->fatigue = (input == 'y');
+
+    printf("Chi vtratili vi smak abo nyukh? (y/n): ");
+    scanf(" %c", &input);
+    symptoms->lossOfTasteOrSmell = (input == 'y');
+}
+
+// Funktsiya dlya diagnostyky nayavnosti simptomiv COVID-19
+bool diagnoseCOVID19(Symptoms symptoms) {
+    return symptoms.fever || symptoms.cough || symptoms.shortnessOfBreath || symptoms.fatigue || symptoms.lossOfTasteOrSmell;
+}
+
+int main() {
+    Symptoms symptoms = initializeSymptoms();
+    inputSymptoms(&symptoms);
+
+    if (diagnoseCOVID19(symptoms)) {
+        printf("U vas mozhut buty simptomy COVID-19. Bud laska, zvernitsya do likarya.\n");
+    } else {
+        printf("U vas nemaye yavnykh simptomiv COVID-19.\n");
+    }
+
+    return 0;
+}
